@@ -112,7 +112,6 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 25px;
-  align-items: center;
   justify-content: center;
   padding: 100px 50px;
   background-color: rgb(245, 245, 245);
@@ -231,11 +230,30 @@ footer nav a:hover {
     font-size: 16px;
   }
 
+  .features {
+    grid-template-columns: 1fr;
+  }
+
   .features h2 {
     font-size: 20px;
   }
 
   .pricing h2 {
     font-size: 34px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .pricing h2 {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .pricing h2 {
+    font-size: 28px;
+  }
+  .pricing p {
+    font-size: 14px;
   }
 }
