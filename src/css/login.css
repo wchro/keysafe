@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: rgb(250, 250, 250);
+  height: 100%;
+  min-height: 100vh;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  height: 70px;
+  border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+header .logo {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.btn {
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 10px 15px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: filter 0.2s, background-color 0.2s;
+  user-select: none;
+}
+
+.btn-primary {
+  color: #f8f8f8;
+  background-color: #0a8537;
+  border: 1px solid #0a8537;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+}
+
+.btn-secondary:hover {
+  background-color: rgb(245, 245, 245);
+}
+
+main {
+  display: flex;
+  padding: 0 25px;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 70px);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 420px;
+  height: 420px;
+  padding: 40px;
+  gap: 20px;
+  border-radius: 10px;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
+}
+
+.login-form form input {
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 5px;
+  padding: 10px;
+  transition: border 0.1s;
+}
+
+.login-form form input:focus {
+  outline: none !important;
+  border: 1px solid #0a8537;
+}
+
+footer {
+  display: flex;
+  padding: 25px 50px;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgb(230, 230, 230);
+  font-size: 12px;
+}
+
+footer p {
+  color: gray;
+}
+
+footer nav {
+  display: flex;
+  gap: 10px;
+}
+
+footer nav a:hover {
+  text-decoration: underline;
+}
