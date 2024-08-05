@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: rgb(250, 250, 250);
+  height: 100%;
+  min-height: 100vh;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  height: 70px;
+  border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+header .logo {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+header nav {
+  display: flex;
+  font-size: 15px;
+  font-weight: 500;
+  gap: 12px;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+button {
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 10px 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: filter 0.2s, background-color 0.2s;
+}
+
+.btn-primary {
+  color: #f8f8f8;
+  background-color: #0a8537;
+  border: 1px solid #0a8537;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+}
+
+.btn-secondary:hover {
+  background-color: rgb(245, 245, 245);
+}
+
+main {
+  display: flex;
+  padding: 0 25px;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 70px);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 10px;
+}
+
+.hero h1 {
+  font-size: 60px;
+}
+
+.hero p {
+  font-size: 22px;
+  color: gray;
+}
+
+.hero-image {
+  transform: scale(0.9);
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 50px;
+  background-color: rgb(245, 245, 245);
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.feature object {
+  width: 55px;
+  height: 55px;
+}
+
+.feature h2 {
+  font-size: 30px;
+}
+
+.feature p {
+  font-size: 16px;
+  color: gray;
+}
+
+.pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 50px;
+  gap: 10px;
+}
+
+.pricing h2 {
+  font-size: 48px;
+}
+
+.pricing p {
+  color: gray;
+}
+
+.pricing button {
+  padding: 10px 80px;
+}
+
+footer {
+  display: flex;
+  padding: 25px 50px;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgb(230, 230, 230);
+  font-size: 12px;
+}
+
+footer p {
+  color: gray;
+}
+
+footer nav {
+  display: flex;
+  /* flex-direction: row; */
+  gap: 10px;
+}
+
+footer nav a:hover {
+  text-decoration: underline;
+}
