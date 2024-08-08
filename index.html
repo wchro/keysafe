@@ -50,7 +50,9 @@
     </header>
     <main class="flex px-[25px] items-center justify-center">
       <div class="flex flex-col w-1/2 gap-2.5">
-        <h1 class="text-6xl font-bold">Secure Your Passwords with KeySafe</h1>
+        <h1 class="text-6xl font-bold xl:text-[55px]">
+          Secure Your Passwords with KeySafe
+        </h1>
         <p class="text-[22px] text-gray-500">
           KeySafe is a powerful password manager that keeps your online accounts
           safe and secure. Never forget a password again.
@@ -73,56 +75,82 @@
         src="src/images/hero_small.png"
       />
     </main>
-    <section id="features" class="features">
-      <div class="feature">
-        <object data="src/images/icons/lock.svg" type="image/svg+xml"></object>
-        <h2>Secure Storage</h2>
-        <p>
+    <section
+      id="features"
+      class="grid grid-cols-2 gap-[25px] justify-center py-[100px] px-[50px] bg-[#f5f5f5]"
+    >
+      <div class="flex flex-col gap-3.5">
+        <object
+          class="w-14 h-14"
+          data="src/images/icons/lock.svg"
+          type="image/svg+xml"
+        ></object>
+        <h2 class="text-3xl font-semibold">Secure Storage</h2>
+        <p class="text-gray-500">
           KeySafe uses advanced encryption to protect your passwords and
           sensitive information, ensuring your data is always safe and secure.
         </p>
       </div>
-      <div class="feature">
-        <object data="src/images/icons/phone.svg" type="image/svg+xml"></object>
-        <h2>Multi-Device Sync</h2>
-        <p>
+      <div class="flex flex-col gap-3.5">
+        <object
+          class="w-14 h-14"
+          data="src/images/icons/phone.svg"
+          type="image/svg+xml"
+        ></object>
+        <h2 class="text-3xl font-semibold">Multi-Device Sync</h2>
+        <p class="text-gray-500">
           Access your passwords and data from any device, seamlessly synced
           across all your devices for ultimate convenience.
         </p>
       </div>
-      <div class="feature">
-        <object data="src/images/icons/key.svg" type="image/svg+xml"></object>
-        <h2>Easy Access</h2>
-        <p>
+      <div class="flex flex-col gap-3.5">
+        <object
+          class="w-14 h-14"
+          data="src/images/icons/key.svg"
+          type="image/svg+xml"
+        ></object>
+        <h2 class="text-3xl font-semibold">Easy Access</h2>
+        <p class="text-gray-500">
           Quickly and securely access your passwords and information with a
           single click or biometric authentication.
         </p>
       </div>
-      <div class="feature">
+      <div class="flex flex-col gap-3.5">
         <object
+          class="w-14 h-14"
           data="src/images/icons/security.svg"
           type="image/svg+xml"
         ></object>
-        <h2>Trusted Security</h2>
-        <p>
+        <h2 class="text-3xl font-semibold">Trusted Security</h2>
+        <p class="text-gray-500">
           KeySafe is built with industry-leading security standards to protect
           your data from unauthorized access and breaches.
         </p>
       </div>
     </section>
-    <section id="pricing" class="pricing">
-      <h2>Start Securing Your Passwords Today</h2>
-      <p>
+    <section
+      id="pricing"
+      class="flex flex-col items-center justify-center text-center py-[100px] px-[50px] gap-2.5"
+    >
+      <h2 class="text-5xl font-bold">Start Securing Your Passwords Today</h2>
+      <p class="text-gray-500">
         KeySafe is the ultimate password manager to keep your online accounts
         safe and secure.
       </p>
-      <a class="btn btn-primary">Try for FREE</a>
+      <a
+        class="border border-solid border-[#0a8537] rounded py-2.5 px-[80px] text-[13px] font-medium select-none text-gray-50 bg-[#0a8537] hover:brightness-110 duration-200"
+        href="/register.html"
+        >Try for FREE</a
+      >
     </section>
-    <footer id="about">
-      <p>&copy; KeySafe. All rights reserved.</p>
-      <nav>
-        <a href="#">Terms of Service</a>
-        <a href="#">Privacy Police</a>
+    <footer
+      id="about"
+      class="flex items-center justify-between py-[25px] px-[50px] border-t text-xs"
+    >
+      <p class="text-gray-500">&copy; KeySafe. All rights reserved.</p>
+      <nav class="flex gap-2.5">
+        <a class="hover:underline" href="#">Terms of Service</a>
+        <a class="hover:underline" href="#">Privacy Police</a>
       </nav>
     </footer>
   </body>
