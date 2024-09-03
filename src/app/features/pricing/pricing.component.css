@@ -1,0 +1,42 @@
+.pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 50px;
+  gap: 10px;
+}
+
+.pricing h2 {
+  font-size: 48px;
+}
+
+.pricing p {
+  color: gray;
+}
+
+.pricing .btn {
+  padding: 10px 80px;
+}
+
+@media screen and (max-width: 708px) {
+  .pricing h2 {
+    font-size: 34px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .pricing h2 {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .pricing h2 {
+    font-size: 28px;
+  }
+  .pricing p {
+    font-size: 14px;
+  }
+}

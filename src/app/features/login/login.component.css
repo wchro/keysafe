@@ -1,0 +1,38 @@
+main {
+  display: flex;
+  padding: 0 25px;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 70px);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 420px;
+  height: 420px;
+  padding: 40px;
+  gap: 20px;
+  border-radius: 10px;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
+}
+
+.login-form form input {
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 5px;
+  padding: 10px;
+  transition: border 0.1s;
+}
+
+.login-form form input:focus {
+  outline: none !important;
+  border: 1px solid #0a8537;
+}

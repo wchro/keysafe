@@ -1,0 +1,35 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  height: 70px;
+  border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+header .logo {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+header nav {
+  display: flex;
+  font-size: 15px;
+  font-weight: 500;
+  gap: 12px;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+header .right {
+  display: flex;
+  gap: 5px;
+}
+
+@media screen and (max-width: 708px) {
+  header nav {
+    display: none;
+  }
+}

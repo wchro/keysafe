@@ -1,0 +1,15 @@
+.message {
+  display: flex;
+  padding: 10px;
+  border-radius: 5px;
+  color: #f8f8f8;
+  font-weight: 500;
+}
+
+.success {
+  background-color: #169645;
+}
+
+.warning {
+  background-color: rgb(236, 67, 67);
+}

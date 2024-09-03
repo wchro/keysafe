@@ -1,0 +1,82 @@
+main {
+  display: flex;
+  padding: 0 25px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 10px;
+}
+
+.hero h1 {
+  font-size: 60px;
+}
+
+.hero p {
+  font-size: 22px;
+  color: gray;
+}
+
+.hero-buttons {
+  display: flex;
+  padding: 10px 0;
+  gap: 5px;
+}
+
+.hero-image {
+  transform: scale(0.9);
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 1357px) {
+  .hero h1 {
+    font-size: 55px;
+  }
+}
+
+@media screen and (max-width: 1289px) {
+  .hero h1 {
+    font-size: 45px;
+  }
+}
+
+@media screen and (max-width: 1030px) {
+  main {
+    flex-direction: column-reverse;
+    padding-bottom: 50px;
+  }
+
+  .hero {
+    text-align: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 50px;
+  }
+
+  .hero p {
+    font-size: 20px;
+  }
+
+  .hero-image {
+    width: 450px;
+  }
+}
+
+@media screen and (max-width: 708px) {
+  .hero h1 {
+    font-size: 25px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+}

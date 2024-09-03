@@ -1,0 +1,22 @@
+<main>
+  <div class="login-form">
+    <h1>Login</h1>
+    @if (data) {
+    <app-notifications
+      msg="{{ data.msg }}"
+      type="{{ data.success ? 'success' : 'warning' }}"
+    />
+    }
+    <form [formGroup]="loginForm" (ngSubmit)="submitForm()" ngNativeValidate>
+      <label for="username">Username:</label>
+      <input type="text" formControlName="username" id="username" />
+      <label for="password">Password:</label>
+      <input type="password" formControlName="password" id="password" />
+      @if (!isLoading) {
+      <button type="submit" class="btn btn-primary">Sign In</button>
+      } @else {
+      <button class="btn btn-primary" disabled><app-loader /></button>
+      }
+    </form>
+  </div>
+</main>
