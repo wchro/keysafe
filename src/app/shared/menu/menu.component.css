@@ -1,0 +1,27 @@
+.menu {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  bottom: 50px;
+  justify-content: center;
+  align-items: center;
+
+  nav {
+    padding: 20px;
+    border-radius: 30px;
+    background-color: #0a8537;
+
+    ul {
+      display: flex;
+      gap: 20px;
+
+      li {
+        list-style: none;
+
+        a {
+          color: #f8f8f8;
+        }
+      }
+    }
+  }
+}
