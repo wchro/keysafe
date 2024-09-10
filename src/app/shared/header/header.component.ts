@@ -1,4 +1,5 @@
 import { Input, Component } from '@angular/core';
+import { AuthService } from '../../core/services/auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,9 @@ import { Input, Component } from '@angular/core';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-  isLogged = localStorage.getItem('user');
+  isLogged: boolean = false;
   @Input() showNav: boolean = true;
+  constructor(authService: AuthService) {
+    this.isLogged = authService.isLogged();
+  }
 }

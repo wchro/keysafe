@@ -11,7 +11,10 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   get(endpoint: string) {
-    // Venir despues
+    const res = this.http.get(`${this.apiUrl}${endpoint}`, {
+      headers: { 'Content-Type': 'application/json' },
+    });
+    return res;
   }
 
   post(endpoint: string, data: any): Observable<any> {

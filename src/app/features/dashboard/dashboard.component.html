@@ -1,0 +1,27 @@
+<main>
+  <div class="search">
+    <input type="text" name="" placeholder="Search passwords.." />
+  </div>
+  <div class="content">
+    @if (data.items) { @if (data.items.length > 0) {
+    <div class="cards">
+      @for (item of data.items; track item) {
+      <article class="card">
+        <header>
+          <h3>{{ item.name }}</h3>
+        </header>
+        <div class="content">
+          <p>{{ item.account | atob }}</p>
+          <div class="password">
+            <p>********</p>
+            <app-icons class="icon" name="copy" />
+          </div>
+        </div>
+      </article>
+      }
+    </div>
+    } @else {
+    <h1>No items</h1>
+    } }
+  </div>
+</main>

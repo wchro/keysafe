@@ -1,0 +1,77 @@
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+}
+
+.search input {
+  width: 240px;
+  padding: 14px;
+  border: 1px solid gray; /* suponiendo que usas una variable */
+  border-radius: 40px;
+  background: none;
+}
+
+.search input:focus {
+  border: 1px solid var(--primary-color);
+  outline: none !important;
+}
+
+.content {
+  max-height: 68vh;
+  display: flex;
+  justify-content: center;
+}
+
+.cards {
+  display: grid;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+  overflow: scroll;
+}
+
+.card {
+  width: 290px;
+  padding: 12px;
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  /* overflow: visible !important; */
+}
+
+.card header {
+  padding: 10px 0px;
+}
+
+.card .content {
+  display: flex;
+  flex-direction: column;
+}
+
+.card .content .password {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: gray;
+  stroke: gray;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.icon:hover {
+  fill: var(--primary-color);
+  stroke: var(--primary-color);
+}

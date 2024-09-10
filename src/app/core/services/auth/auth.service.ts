@@ -33,4 +33,12 @@ export class AuthService {
     localStorage.removeItem('accessToken');
     localStorage.removeItem('refreshToken');
   }
+
+  isLogged(): boolean {
+    if (typeof window !== 'undefined') {
+      if (!localStorage.getItem('refreshToken')) return false;
+      return true;
+    }
+    return false;
+  }
 }
