@@ -7,3 +7,22 @@ main {
   gap: 20px;
   height: 100vh;
 }
+
+.add-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.add-form form input {
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.add-form form input[type="submit"] {
+  color: #f8f8f8;
+  border: none;
+  background-color: var(--primary-color);
+  cursor: pointer;
+}

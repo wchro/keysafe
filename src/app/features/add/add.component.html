@@ -1,1 +1,30 @@
-<p>add works!</p>
+<main>
+  <div class="add-form">
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()" ngNativeValidate>
+      <input type="text" formControlName="name" placeholder="Name" required />
+      <input
+        type="text"
+        formControlName="account"
+        placeholder="Account"
+        required
+      />
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="Password"
+        required
+      />
+      <input
+        type="text"
+        formControlName="site"
+        placeholder="Website"
+        required
+      />
+      @if (!isLoading) {
+      <input type="submit" value="Save" />
+      } @else {
+      <button class="btn btn-primary" disabled><app-loader /></button>
+      }
+    </form>
+  </div>
+</main>
