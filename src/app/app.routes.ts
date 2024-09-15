@@ -4,6 +4,8 @@ import { LoginPageComponent } from './pages/login/login.component';
 import { RegisterPageComponent } from './pages/register/register.component';
 import { DashboardPageComponent } from './pages/dashboard/dashboard.component';
 import { authGuard } from './core/guards/auth.guard';
+import { GeneratorPageComponent } from './pages/generator/generator.component';
+import { AddPageComponent } from './pages/add/add.component';
 
 export const routes: Routes = [
   // Home
@@ -15,6 +17,16 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardPageComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'generator',
+    component: GeneratorPageComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'add',
+    component: AddPageComponent,
     canActivate: [authGuard],
   },
   // 404

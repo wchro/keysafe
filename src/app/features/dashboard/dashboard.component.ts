@@ -21,4 +21,12 @@ export class DashboardComponent {
       error: (error) => (this.data = error.error),
     });
   }
+
+  copyToClipboard(text: string) {
+    try {
+      navigator.clipboard.writeText(atob(text));
+    } catch (error) {
+      console.error('ERROR COPYING PASSWORD');
+    }
+  }
 }

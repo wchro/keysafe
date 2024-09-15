@@ -3,7 +3,7 @@
     <input type="text" name="" placeholder="Search passwords.." />
   </div>
   <div class="content">
-    @if (data.items) { @if (data.items.length > 0) {
+    @if (data?.items) { @if (data.items.length > 0) {
     <div class="cards">
       @for (item of data.items; track item) {
       <article class="card">
@@ -14,7 +14,11 @@
           <p>{{ item.account | atob }}</p>
           <div class="password">
             <p>********</p>
-            <app-icons class="icon" name="copy" />
+            <app-icons
+              class="icon"
+              name="copy"
+              (click)="copyToClipboard(item.password)"
+            />
           </div>
         </div>
       </article>
