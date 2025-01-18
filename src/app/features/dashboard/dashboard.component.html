@@ -26,6 +26,7 @@
     </div>
     } @else {
     <h1>No items</h1>
-    } }
+    } } @if (data == undefined) {
+    <app-loader color="#0a8537" [size]="50" />}
   </div>
 </main>
