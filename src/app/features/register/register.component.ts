@@ -30,24 +30,43 @@ export class AuthRegisterComponent {
 
   constructor(private auth: AuthService, private router: Router) {}
 
-  submitForm(): void {
+  async submitForm(): Promise<void> {
     this.isLoading = true;
     if (this.registerForm.valid) {
       const { username, email, password } = this.registerForm.value;
-      if (username && email && password)
-        this.auth.register(username, email, password).subscribe({
-          next: (response) => {
-            this.data = response;
-            localStorage.setItem('user', response.user);
-            localStorage.setItem('accessToken', response.accessToken);
-            localStorage.setItem('refreshToken', response.refreshToken);
-            setTimeout(() => this.router.navigateByUrl('/dashboard'), 2000);
-          },
-          error: (error) => {
-            this.data = error.error;
-            this.isLoading = false;
-          },
-        });
+      if (username && email && password) {
+        const salt = this.auth.generateSalt();
+        const hash = await this.auth.generateHash(password, salt, 'encoded');
+        const derivedKey = await this.auth.generateHash(
+          password,
+          salt,
+          'binary'
+        );
+        const hexSalt = this.auth.generateHex(salt);
+
+        // create master key
+        const masterKey = this.auth.generateMasterKey();
+        const encryptedKey = await this.auth.encryptMasterKey(
+          derivedKey,
+          masterKey
+        );
+
+        this.auth
+          .register(username, email, hash, hexSalt, encryptedKey)
+          .subscribe({
+            next: (response) => {
+              this.data = response;
+              localStorage.setItem('user', response.user);
+              localStorage.setItem('accessToken', response.accessToken);
+              localStorage.setItem('refreshToken', response.refreshToken);
+              setTimeout(() => this.router.navigateByUrl('/dashboard'), 2000);
+            },
+            error: (error) => {
+              this.data = error.error;
+              this.isLoading = false;
+            },
+          });
+      }
     }
   }
 }

@@ -33,14 +33,40 @@ export class AuthLoginComponent {
     if (this.loginForm.valid) {
       const { username, password } = this.loginForm.value;
       if (username && password)
-        this.auth.login(username, password).subscribe({
+        // call api to get the salt for the user
+        this.auth.prelogin(username).subscribe({
           next: (response) => {
-            this.data = response;
-            // Set data to the localStorage
-            localStorage.setItem('user', response.user);
-            localStorage.setItem('accessToken', response.accessToken);
-            localStorage.setItem('refreshToken', response.refreshToken);
-            this.router.navigateByUrl('/dashboard');
+            const salt = new Uint8Array(
+              response.salt
+                .match(/.{1,2}/g)
+                .map((byte: any) => parseInt(byte, 16))
+            );
+            // generate hash
+            this.auth.generateHash(password, salt, 'encoded').then((hash) => {
+              // call login api
+              this.auth.login(username, hash).subscribe({
+                next: async (response) => {
+                  // get derived key
+                  const derivedKey = await this.auth.generateHash(
+                    password,
+                    salt,
+                    'binary'
+                  );
+
+                  this.data = response;
+                  // Set data to the localStorage
+                  localStorage.setItem('user', response.user);
+                  localStorage.setItem('accessToken', response.accessToken);
+                  localStorage.setItem('refreshToken', response.refreshToken);
+                  localStorage.setItem('masterKey', response.masterKey);
+                  this.router.navigateByUrl('/dashboard');
+                },
+                error: (error) => {
+                  this.data = error.error;
+                  this.isLoading = false;
+                },
+              });
+            });
           },
           error: (error) => {
             this.data = error.error;
