@@ -58,7 +58,14 @@ export class AuthLoginComponent {
                   localStorage.setItem('user', response.user);
                   localStorage.setItem('accessToken', response.accessToken);
                   localStorage.setItem('refreshToken', response.refreshToken);
-                  localStorage.setItem('masterKey', response.masterKey);
+
+                  // Set encryption keys
+                  const masterKeyB64 = btoa(response.masterKey);
+                  const derivedKeyB64 = btoa(this.auth.generateHex(derivedKey));
+                  const encryptionKey = `${masterKeyB64}|${derivedKeyB64}`;
+                  localStorage.setItem('encryptionKey', encryptionKey);
+
+                  // redirect
                   this.router.navigateByUrl('/dashboard');
                 },
                 error: (error) => {
