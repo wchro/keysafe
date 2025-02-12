@@ -4,6 +4,7 @@ import { ApiService } from '../../core/services/api/api.service';
 import { LoaderComponent } from '../../shared/loader/loader.component';
 import { PasswordService } from '../../core/services/password/password.service';
 import { Router } from '@angular/router';
+import { encryptData, hexToArray } from '../../utils/encryption';
 
 @Component({
   selector: 'app-add',
@@ -28,13 +29,25 @@ export class AddComponent {
     site: new FormControl(),
   });
 
-  onSubmit() {
+  async onSubmit() {
     this.isLoading = true;
     if (this.addForm.valid) {
       const { name, account, password, site } = this.addForm.value;
       if (name && account && password && site) {
+        const derivedKey = hexToArray(
+          atob(localStorage.getItem('encryptionKey')?.split('|')[1] ?? '')
+        );
+        const encryptedName = await encryptData(derivedKey, name);
+        const encryptedAccount = await encryptData(derivedKey, account);
+        const encryptedPassword = await encryptData(derivedKey, password);
+        const encryptedSite = await encryptData(derivedKey, site);
         this.passwordService
-          .addPassword(name, account, password, site)
+          .addPassword(
+            encryptedName,
+            encryptedAccount,
+            encryptedPassword,
+            encryptedSite
+          )
           .subscribe({
             next: (response) => this.router.navigateByUrl('/dashboard'),
             error: (error) => (this.isLoading = false),
